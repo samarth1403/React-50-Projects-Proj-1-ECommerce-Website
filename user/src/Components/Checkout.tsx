@@ -1,0 +1,32 @@
+import React from 'react'
+
+const Checkout = () => {
+  return (
+    <div className="flex flex-row flex-wrap justify-evenly items-start">
+      <div className="flex flex-col flex-wrap my-4 sm:w-[320px] md:w-[500px] lg:w-[700px]">
+        <div className="bg-gray-300 p-[20px] flex flex-row flex-wrap justify-between items-start">
+          <img
+            src="https://png.pngtree.com/png-clipart/20210311/original/pngtree-cricket-bat-clipart-ball-sports-wood-png-image_6024964.jpg"
+            alt=""
+            className="w-[130px] h-[130px]"
+          />
+          <div>
+            <p>Title of Product</p>
+            <p>$500</p>
+          </div>
+          <button className='bg-red-400 p-2 my-1'>Remove</button>
+        </div>
+      </div>
+      <div className="my-4 bg-gray-400 p-[10px]">
+        <h2 className="my-2 text-center font-bold text-2xl">Total Amount</h2>
+        <div className="flex flex-col justify-center flex-no-wrap items-center">
+          <p className="my-1">Total Products : 1</p>
+          <p className="my-1">Amount : 500</p>
+          <button className="bg-yellow-500 my-1 p-2">Checkout</button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default Checkout

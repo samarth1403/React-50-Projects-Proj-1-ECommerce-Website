@@ -1,11 +1,14 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import {BsShop} from "react-icons/bs";
 import {AiOutlineSearch} from "react-icons/ai"
 import {BsFillPersonFill } from "react-icons/bs";
 import {BsFillCartFill} from "react-icons/bs";
 import {Link} from "react-router-dom";
+import { rootContext } from '../Context/Provider';
  
 const Header = () => {
+  const context = useContext(rootContext);
+
   return (
     <div className="w-[100%] h-auto bg-gray-900 flex flex-row flex-wrap justify-between items-center">
       <Link to="/">
@@ -20,7 +23,10 @@ const Header = () => {
       </div>
       <div className="flex flex-row flex-no-wrap justify-center items-center p-[20px]  text-white">
         <Link to="/checkout">
-          <BsFillCartFill size="40px" className="mx-2" />
+          <BsFillCartFill size="40px" className="mx-2 relative"></BsFillCartFill>
+          <span className="absolute top-2 right-20 px-2 py-1 translate-x-1/2 bg-red-500 border border-white rounded-full text-xs text-white">
+            {context?.state.products.length}
+          </span>
         </Link>
         <Link to="/login">
           <BsFillPersonFill size="40px" className="mx-2" />

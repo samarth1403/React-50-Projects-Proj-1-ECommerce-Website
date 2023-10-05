@@ -1,7 +1,7 @@
 import { createUserWithEmailAndPassword } from 'firebase/auth';
-import React,{useState} from 'react'
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { auth } from '../utils/config';
+import { auth } from '../config';
 
 type registerType = {
   name : string;
@@ -21,15 +21,15 @@ const Register = () => {
 
   const submitHandler = (e:React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    createUserWithEmailAndPassword(auth,user.email,user.password)
-    .then((auth)=>{
-      if(auth){
-         navigate("/");
-      }
-    })
-    .catch((error)=>{
-      alert(error);
-    })
+    createUserWithEmailAndPassword(auth, user.email, user.password)
+      .then((auth) => {
+        if (auth) {
+          navigate("/");
+        }
+      })
+      .catch((error) => {
+        alert(error);
+      });
   }
 
   return (

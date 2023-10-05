@@ -1,5 +1,5 @@
-import React,{useContext} from "react";
-import { rootContext, rootContextType, useMyContext } from "../Context/Provider";
+import { useContext } from "react";
+import { rootContext } from "../Context/Provider";
 import { productType } from "./Home";
 
 type propsType = {
